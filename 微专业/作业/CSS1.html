@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>两列布局</title>
+	</head>
+	<style type="text/css">
+		.parent{
+			margin: 0 auto;
+			width: 810px;
+			height: 200px;/*可调整*/
+			text-align: center;
+			font-size: 48px;
+			line-height: 200px;
+			color: white;
+		}
+		.parent:after{
+			content: ".";
+			display: block;
+			clear: both;
+			height: 0;
+			overflow: hidden;
+			visibility: hidden;
+		}
+
+		.side{
+			width: 200px;
+			background-color: red;
+			float: left;
+		}
+		.main{
+			width: 600px;
+			margin-left: 10px;
+			background-color: blue;
+			float: left;
+		}
+	</style>
+	<body>
+		<div class="parent">
+			<div class="side">
+				侧栏
+			</div>
+			<div class="main">
+				主栏
+			</div>
+		</div>
+	</body>
+</html>

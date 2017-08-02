@@ -1,0 +1,40 @@
+.container{
+	margin: 20px auto; 
+	width: 50%;
+	min-width: 300px;
+	display: flex;
+}
+.pic{
+	width: 100px; height: 100px;
+	margin: 0 15px 0 0;
+	background-color: lightblue; 
+	 /*随意取得颜色，不影响正常显示，如果图片存在会覆盖在background-color之上*/
+}
+.text{
+	flex: 1;
+	width: 100%;
+	margin: 0;padding: 0;
+	font: 14px/25px "宋体";
+	color: #666;
+	height: 100px;   /*因为行高为25，最多显示4行也就是超出100px的hidden*/
+	overflow: hidden;
+}
+
+.text p{
+	margin: 0;
+	overflow: hidden; 
+	white-space: nowrap; 
+	text-overflow: ellipsis;
+	font-size: 16px;
+	font-weight: bold;
+	color: black;
+}
+
+.text:after{
+	content: ".";
+	display: block;
+	clear: both;
+	height: 0;
+	overflow: hidden;
+	visibility: hidden;
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>变形</title>
+		<style type="text/css">
+			.demo{perspective: 2000px;}
+			.demo > div{
+				transform-style: preserve-3d;
+				position: absolute;
+				top: 0;left: 0;
+				width: 100%;height: 100%;
+			}
+			.demo pre{
+				font-size: 200px;
+				text-align: center;
+			}
+			.demo pre:first-child{
+				transform: rotateY(200deg);
+			}
+			.demo pre:last-child{
+				transform: none;
+			}
+			.demo1 > div{
+				transform: rotateY(60deg);backface-visibility: hidden;
+			}
+			/*.demo2 > div{
+				transform: rotateY(45deg);
+			}
+			.bf pre{
+				backface-visibility: hidden;
+			}*/
+		</style>
+	</head>
+	<body>
+		<div class="demo demo1">
+			<div>
+				<pre>E</pre>
+				<pre>C</pre>
+			</div>
+		</div>
+		<!--<div class="demo demo2">
+			<div>
+				<pre>E</pre>
+				<pre>C</pre>
+			</div>
+		</div>
+		<div class="demo demo3">
+			<div>
+				<pre>E</pre>
+				<pre>C</pre>
+			</div>
+		</div>
+				<div class="demo demo2 bf">
+			<div>
+				<pre>E</pre>
+				<pre>C</pre>
+			</div>
+		</div>
+		<div class="demo demo3 bf">
+			<div>
+				<pre>E</pre>
+				<pre>C</pre>
+			</div>
+		</div>-->
+	</body>
+</html>
