@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>产生随机数</title>
+		<style type="text/css">
+			.container{
+				position: relative;
+				width: 250px;
+				font: 16px/2 "微软雅黑";
+				margin: 100px auto;
+				text-align: center;
+			}
+			.rand{
+				width: 250px; box-sizing: content-box;
+			}
+			#num{
+				font: 30px/2 arial;
+				display: inline-block;
+				width: 60px;height: 60px;
+				vertical-align: middle;
+				background-color: skyblue;
+			}
+			button{
+				position: absolute;
+				left: 200px;top: 75px;
+				width: 50px;height: 30px;
+				background-color: lightblue;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="rand">
+				产生一个0-9的随机数：
+				<span id="num"></span>
+			</div>
+			<button id="btn">按钮</button>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var btn = document.getElementById("btn")
+		btn.addEventListener("click",function (){
+			var Nn = Math.floor(Math.random()*10);
+			document.getElementById("num").innerHTML=Nn;
+		});
+	</script>
+</html>
