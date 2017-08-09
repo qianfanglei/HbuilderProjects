@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>畅销书排行榜</title>
+  <style>
+    aside{
+      margin-left: 80px;
+      margin-top: 50px;
+    }
+    h2{
+      display: block;
+      width: 230px;
+      font-family: 微软雅黑;
+      color: rgb(50, 50, 50);
+      font-weight: 600;
+      font-size: 1.2em;
+      border-bottom: 1px solid rgb(201, 201, 201);
+      padding-bottom: 1.2em;
+      margin-top: 20px;
+      margin-bottom: 0;
+    }
+    a{
+      text-decoration: none;
+      color: black;
+      padding-left: 1.2em;
+      transition: all .2s ease;
+    }
+    a:hover{
+      color: rgb(191, 17, 6);
+    }
+    span{
+      font-weight: 600;
+    }
+    ol{
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+    li{
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      width: 230px;
+      height: 2.5em;
+      font-family: 微软雅黑 light;
+      border-bottom: 1px dashed rgb(219, 216, 216);
+    }
+    li:hover{
+      background: rgba(83, 83, 83, 0.03);
+      cursor: pointer;
+    }
+    .Forefront span{
+      color: rgb(191, 17, 6);
+    }
+  </style>
+</head>
+<body>
+  <aside>
+    <h2>图书畅销榜</h2>
+    <ol>
+      <li class="Forefront"><span>1</span><a href="#" title="当我足够好，才会遇见你">当我足够好，才会遇见你</a></li>
+      <li class="Forefront"><span>2</span><a href="#" title="皮囊">皮囊</a></li>
+      <li class="Forefront"><span>3</span><a href="#" title="李光耀论中国与世界">李光耀论中国与世界</a></li>
+      <li><span>4</span><a href="#" title="乖，摸摸头">乖，摸摸头</a></li>
+      <li class="LastItem"><span>5</span><a href="#" title="男女内参">男女内参</a></li>
+    </ol>
+  </aside>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>注册页面</title>
+  <style>
+    form div{
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      padding: 1.2em .5em;
+      font-family: 微软雅黑 light;
+    }
+    fieldset{
+      border: 1px solid rgb(245, 245, 245);
+      border-radius: .3em;
+      padding-bottom: 2.5em;
+      padding-left: 1.5em;
+    }
+    legend{
+      font-size: 2.2em;
+      font-family: 微软雅黑 light;
+      color: rgb(235, 230, 230);
+      padding-left: .3em;
+      padding-right: .3em;
+    }
+    label{
+      margin: 0;
+      margin-right: 30px
+    }
+    .avatar input{
+      font-family: 微软雅黑 light;
+    }
+    .user-name input,.education select,.signature textarea{
+      border: 1px solid rgb(185, 185, 185);
+      padding: .5em .6em;
+      font-family: 微软雅黑 light;
+      border-radius: .2em;
+      outline-color: rgb(46, 184, 251);
+    }
+    .signature textarea{
+      resize: none;
+    }
+    .sex input{
+      margin-right: .5em;
+    }
+    .sex input[value="女"]{
+      margin-left: 40px;
+    }
+    .hobby input{
+      margin-left: 2.5em;
+      margin-right: .5em;
+    }
+    .hobby input[value="电影"]{
+      margin-left: 0;
+    }
+    .signature textarea{
+      width: 300px;
+      height: 100px;
+    }
+    button[name="save"]{
+      margin-left: 70px;
+      border: 1px solid rgba(51, 51, 51, 0.15);
+      background-color: rgb(46, 184, 251);
+      cursor: pointer;
+      color: white;
+      border-radius: .2em;
+      font-family: 微软雅黑 light;
+      padding: .8em 1.2em;
+      transition: all .2s;
+    }
+    button[name="save"]:hover{
+      background:rgb(41, 164, 223);
+      text-shadow: 1px 1px 5px rgba(108, 108, 108, 0.48);
+    }
+    button[name="save"]:active{
+      background: rgb(35, 147, 200);
+    }
+  </style>
+</head>
+<body>
+  <form action="">
+    <fieldset>
+      <legend>
+        个人信息页
+      </legend>
+      <div class="avatar">
+        <label for="avatar">头像</label>
+        <input type="file" name="avatar">
+      </div>
+      <div class="user-name">
+        <label for="user-name">昵称</label>
+        <input type="text" name="user-name" placeholder="请输入昵称">
+      </div>
+      <div class="education">
+        <label for="education">学历</label>
+        <select name="education">
+          <option value="大专">大专</option>
+          <option value="本科">本科</option>
+        </select>
+      </div>
+      <div class="sex">
+        <label for="sex">性别</label>
+        <input type="radio" value="男" name="sex">男
+        <input type="radio" value="女" name="sex">女
+      </div>
+      <div class="hobby">
+        <label for="hobby">爱好</label>
+        <input type="checkbox" value="电影" name="hobby">电影
+        <input type="checkbox" value="摄影" name="hobby">摄影
+        <input type="checkbox" value="音乐" name="hobby">音乐
+        <input type="checkbox" value="阅读" name="hobby">阅读
+      </div>
+      <div class="signature">
+        <label for="signature">签名</label>
+        <textarea name="signature" rows="3" cols="30"></textarea>
+      </div>
+      <button name="save" type="submit">保存</button>
+    </fieldset>
+  </form>
+</body>
+</html>

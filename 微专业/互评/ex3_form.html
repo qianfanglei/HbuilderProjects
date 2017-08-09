@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>htmlwork3</title>
+
+	<style name="booklist/css">
+	    /*样式归零。百度来的*/
+			html{color:#000;background:#FFF;}
+			body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td{margin:0;padding:0;}
+			table{border-collapse:collapse;border-spacing:0;}
+			fieldset,img{border:0;}
+			address,caption,cite,code,dfn,em,strong,th,var,optgroup{font-style:inherit;font-weight:inherit;}
+			del,ins{text-decoration:none;}
+			li{list-style:none;}
+			caption,th{text-align:left;}
+			h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}
+			a {text-decoration: none;}
+			q:before,q:after{content:'';}
+			abbr,acronym{border:0;font-variant:normal;}
+			sup{vertical-align:baseline;}
+			sub{vertical-align:baseline;}
+			legend{color:#000;}
+			input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;}
+			input,button,textarea,select{*font-size:100%;}
+
+
+		/*填写资料表单样式。独立完成*/
+		.infoform{margin:30px;font-size:16px; font-family: "PingFang SC", "Microsoft YaHei", "HanHei SC", "Helvetica Neue", "Open Sans", Arial, "Hiragino Sans GB", 微软雅黑, STHeiti, "WenQuanYi Micro Hei", SimSun, sans-serif;color:#404040;}
+		.headlabel,.headlabel-idw{margin: 0px 36px 0px 0px;font-size:18px;display:inline-block;}
+		.opbox{margin-top:40px;}
+		.inputfile{display:inline-block;cursor:pointer; width :100px;height: 40px;border:1px solid black;background-color: #eeeeee;text-align: center;border-radius: 4px;line-height:40px;vertical-align: middle;margin-right: 6px;;}
+		.change{display:none;}
+		.save-1{border:none; width:122px;height: 44px;background-color: #d853b7;color:white;font-size :18p;margin-top: 10px;margin-left: 76px;}
+		#edurecord{width:96px;height: 40px;}
+		#nickname{width: 200px;height:44px;padding-left: 12px;}
+		.hobbyop{margin:0 10px 0 0;}
+		.sexop{margin:0 40px 0 0;}
+		.headlabel-idw{vertical-align: top;}
+		#idwords{display:inline-block;width: 310px;height: 88px;}
+		#rd_0,#rd_1,#cb_0,#cb_1,#cb_2,#cb_3{margin: 0px 6px 0px 0px;}
+		#file-2{border:none;}
+		input,textarea,select,.inputfile{border:#d7d7d7 1px solid;}
+
+	</style>
+
+</head>
+
+<body>
+
+	
+	<!--填写资料表单。独立完成-->
+	<form action="" method="post" class="infoform">
+		<fieldset>
+			<legend></legend>
+				<div class="opbox">
+				<label for="file" class="headlabel">头像</label>
+				<label for="file-2"><div class="inputfile">选择文件</div><input type="file" name="file" id="file-2" class="change"／>未选择任何文件</label>
+				</div>
+				<div class="opbox">
+				<label for="nickname" class="headlabel">昵称</label>
+				<input type="text" id="nickname" value="独行的牡蛎" ／>
+				</div>
+				<div class="opbox"> 
+				<label for="edurecord" class="headlabel">学历</label>
+				<select id="edurecord">
+					<option>大专</option>
+					<option>本科</option>
+				</select>
+				</div >
+				<div class="opbox">
+				<label for="sex" class="headlabel" >性别</label>
+				<label for="rd_0" class ="sexop"><input type ="radio" name="sex" id="rd_0" value="male" checked>男</label>
+				<label for="rd_1" class ="sexop"><input type ="radio" name="sex" id="rd_1" value="female">女</label>
+				</div>
+				<div class="opbox">
+				<label for="hobby" class="headlabel">爱好</label>
+				<label class="hobbyop" for="cb_0"><input type ="checkbox" name="hobby" id="cb_0" value="movie"／>电影</label>
+				<label class="hobbyop"  for="cb_1"><input type ="checkbox" name="hobby" id="cb_1" value="video"／>摄影</label>
+				<label class="hobbyop"  for="cb_2"><input type ="checkbox" name="hobby" id="cb_2" value="music"／>音乐</label>
+				<label class="hobbyop"  for="cb_3"><input type ="checkbox" name="hobby" id="cb_3" value="reading"／>阅读</label>
+				</div>
+				<div class="opbox">
+				<label for="idwords" class="headlabel-idw";">签名</label>
+				<textarea id="idwords" rows="" cols=""></textarea>
+				</div>
+		</fieldset>
+		<button type ="submit" class="save-1">保存</button>
+				
+	</form>
+
+
+
+</body>
+</html>

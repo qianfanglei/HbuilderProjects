@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>运费详情</title>
+  <style>
+    table{
+      margin: auto;
+      font-family: 微软雅黑;
+      border: 1px solid rgb(208, 208, 208);
+      border-collapse: collapse;
+      font-size: .8em
+    }
+    caption{
+      font-weight: 600;
+      color:rgb(60, 60, 60);
+      margin-bottom: 1em;
+      font-size: .9em;
+    }
+    td{
+      border: 1px solid rgb(208, 208, 208);
+      padding: .9em 1.4em;
+    }
+    thead tr th{
+      border: 1px solid rgb(208, 208, 208);
+      padding: .8em 1.2em;
+      background-color: rgb(245, 245, 245);
+      font-size: 1em;
+      color: rgb(91, 91, 91);
+    }
+    .left-td{
+      background-color: rgb(245, 245, 245);
+      font-weight: bold;
+      color: rgb(91, 91, 91);
+    }
+  </style>
+</head>
+<body>
+  <table>
+    <caption>运费详情</caption>
+    <thead>
+      <tr>
+        <th>区域</th>
+        <th>寄达地</th>
+        <th>首重（元/1000g）</th>
+        <th>续重（元/1000g）</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td rowspan="2" class="left-td">一区</td>
+        <td>浙江、上海、江苏</td>
+        <td>6</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td>江西、安徽</td>
+        <td>7</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td class="left-td">二区</td>
+        <td>吉林、黑龙江、云南</td>
+        <td>10</td>
+        <td>6</td>
+      </tr>
+      <tr>
+        <td class="left-td">三区</td>
+        <td>新疆、西藏</td>
+        <td>15</td>
+        <td>10</td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title>Title</title>
+   <meta name="viewport" content="width:device-width,initial-scale=1.0">
+   <style>
+       *{
+           margin:0;
+           padding:0;
+       }
+       button{
+           font:normal 12px/30px "宋体";
+           border:1px solid #ddd;
+           width:50px;
+           height:28px;
+           background: #eee;
+           position:relative;
+       }
+       ul{
+           position:absolute;
+       }
+       li{
+           list-style: none;
+           height:30px;
+           padding:0 10px;
+           top:32px;
+           left:0;
+           line-height: 30px;
+           border:1px solid #ddd;
+           border-top: none;
+       }
+       ul>li:nth-of-type(1){
+           border-top: 1px solid #ddd;
+       }
+       li:hover{
+           background: #ddd;
+       }
+   </style>
+</head>
+<body>
+   <button>按钮</button>
+   <ul>
+       <li>下拉菜单项</li>
+       <li>下拉菜单项</li>
+       <li>下拉菜单项</li>
+       <li>下拉菜单项</li>
+   </ul>
+</body>
+</html>
