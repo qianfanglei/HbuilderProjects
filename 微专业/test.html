@@ -1,21 +1,44 @@
-<!DOCTYPE html>
-<html>
+    <!DOCTYPE html>
+    <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>获取输入框的值</title>
-        <script type="text/javascript">
-            window.onload=function(){
-                var bt=document.getElementById("bt2");
-                var btt=document.getElementById("bt1");
-                bt.onclick=function(){
-                    alert(bt1.value);
-                }
-            }
-        </script>
+        <title>Document</title>
     </head>
     <body>
-请输入内容<input type="text" id="bt1" />
-<input type="button" id="bt2" value="获取输入数据" />
- 
+         <script type="text/javascript">
+         	arr = "1024 2048 3072 7168 3072 1024".split(" ");
+         	document.write(cpu(arr));
+        	function cpu(arr) {
+			    var sum = 0;
+			    for(var i = 0; i < arr.length; i++) {
+			        arr[i] /= 1024;
+			        sum += arr[i];
+			    }
+			    return (sum - bag(arr, arr, Math.floor(sum / 2)))*1024;  
+			    // 背包问题，本题的重量和价值均为时长，第一个arr表示重量， 第二个arr表示价值
+			}
+			  
+			function bag(weight, value, room) {
+			    var dp = [];
+			    for(var i = 0; i <= room; i++) {
+			        if(i < weight[0]) {     
+			            dp.push(0);
+			        }else {
+			            dp.push(value[0]);     // 如果我的重量小于背包的容量
+			        }
+			    }
+			      
+			    for(var i = 1; i< weight.length; i++) {
+			        for(var j = room; j>0; j--) {
+			            if(j - weight[i] >= 0) {  // 容量装得下第i个物品
+			                // dp[j]表示在容量为j的情况下可存放的重量
+			                // 如果不放arr[i]重量为dp[j],如果放arr[i]重量为dp[j-arr[i]]+arr[i];
+			                dp[j] = Math.max(dp[j-weight[i]] + value[i], dp[j]);
+			            }
+			        }
+			    }
+			    return dp[room];
+			}
+         </script>
     </body>
-</html>
+    </html>
