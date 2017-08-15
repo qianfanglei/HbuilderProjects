@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		
+		function parseQuery(query){
+		    var result = [];
+		    var a = query.split("&");
+		    for(var k=0;k<a.length;k++){
+		        var p = 0;
+		        if(!a[k]){
+		            a.splice(k,1);
+		            k = k - 1;
+		        }
+		    }
+		    for(var i=0;i<a.length;i++){
+		        var j = a[i].indexOf('=');
+		        if(j){
+		            var b = a[i].split("");
+		            var c = b.splice(j,1,':"');
+		            result.push(b.join("").concat('"'));
+		    }
+		    return result.join();
+		}
+		var tom = parseQuery("name=tom&age=12&gender&");
+		document.write(tom);
+		
+		
+//		function parseQuery(arr){
+//			var newArr = arr.split("&");
+//			
+//		    return result = arr.match(reg);
+//		}
+//		var a = parseQuery('name=tom&age=12&gender&');
+//		document.write(a);
+		
+//		var url = 'http://blog.163.com/album?id=1#comment';
+//		var reg = /(https?:)\/\/([^\/]+)(\/[^\?]*)?(\?[^#]*)?(#.*)?/;
+//		var arr = url.match(reg);
+//		var a = arr[1],b = arr[2],c=arr[3],d=arr[4],e=arr[5];
+////		document.write(a+b+c+d+e);
+//		document.write(arr);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

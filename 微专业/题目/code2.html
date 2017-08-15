@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>小易去公司</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var readline = require('readline');
+			var rl = readline.createInterface({
+			    input: process.stdin,
+			    output: process.stdout
+			});
+			  
+			var k = 5;
+			var inputs = [];
+			  
+			rl.on('line', function(line) {
+			    inputs.push(line.trim());
+			    if(inputs.length == k) {
+			        var n = parseInt(inputs[0]),    // 出租车打车点的个数
+			            tx = parse(inputs[1].split(' ')),  // 每个出租车打车点的横坐标tX[i]
+			            ty = parse(inputs[2].split(' ')),  // 每个出租车打车点的纵坐标tY[i]
+			            pos = parse(inputs[3].split(' ')), // 办公室坐标gx,gy
+			            wt = parse(inputs[4].split(' '));  // 走路时间walkTime和taxiTime
+			  
+			  
+			        var smallTime = time(n, tx, ty, pos, wt);
+			        console.log(smallTime);
+			        inputs.length = 0;       
+			    }
+			});
+			  
+			function time(n, tx, ty, pos, wt) {
+			    var times = [];
+			    var walkTime,
+			        taxiTime,
+			        walkSpeed = wt[0],
+			        taxiSpeed = wt[1];
+			    var walkAllTime = (Math.abs(pos[0]) + Math.abs(pos[1])) * walkSpeed;
+			    for (var i = 0; i < n; i++) {
+			       walkTime = (Math.abs(tx[i]) + Math.abs(ty[i])) * walkSpeed
+			       taxiTime = (Math.abs(pos[0]-tx[i])+Math.abs(pos[1]-ty[i])) * taxiSpeed;
+			       times[i] = walkTime+ taxiTime;
+			    }
+			    times.push(walkAllTime);
+			    times.sort(function(a,b) {
+			        return a-b;
+			    });
+			    return times[0];
+			}
+			  
+			function parse (a) {
+			    return a.map(function(val) {
+			        return parseInt(val);
+			    })
+			}
+		</script>
+	</body>
+</html>
