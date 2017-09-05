@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html >
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>cookie操作</title>
+	</head>
+	<body>
+	    <input type="button" id="btn1" value="添加cookie" />
+	    <input type="button" id="btn2" value="获取cookies" />
+		<script>
+		    function getCookies() {
+		        var cookie = {},
+		            all = document.cookie,
+		            item,list,p,name,value;
+		        if (all === '') return cookie;
+		        list = all.split(';');
+		        for(var i=0; i<list.length; i++) {
+		            item = list[i];
+		            p = item.indexOf('=');//以等号分割
+		            name = item.substring(0,p);//等号前
+		            value = item.substring(p + 1);//等号后
+		            value = decodeURIComponent(value);//解码
+		            cookie[name] = value;
+		        }
+		        return cookie;
+		    }
+		</script>
+		<!-- 测试内容↓ -->
+		<script>
+		    //添加单条cookie(名称，内容，天数)
+		    function setCookie(name,user,iDay){
+		        var oDate = new Date();
+		        oDate.setDate(oDate.getDate()+iDay);
+		        document.cookie = name + '=' + user + ';expires=' + oDate;
+		    }
+		    //测试
+		    var oBtn1 = document.getElementById('btn1');
+		    var obtn2 = document.getElementById('btn2');
+		     
+		    oBtn1.onclick = function(){
+		        var name = prompt('cookie名称');
+		        var cont = prompt('cookie内容');
+		        setCookie(name,cont,14);
+		    }
+		    obtn2.onclick = function(){
+		        var ck = getCookies()
+		        console.log(ck)
+		    }
+		</script>
+	</body>
+</html>

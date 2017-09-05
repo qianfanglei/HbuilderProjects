@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Comelementtible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="example">
+        <p id="p1" class="aaa bbb">aaa bbb</p>
+        <p id="p2" class="aaa ccc">aaa ccc</p>
+        <p id="p3" class="bbb ccc">bbb ccc</p>
+    </div>
+</body>
+	<script>
+	    function getElementsByClassName(element,names) {
+	        var result= [], 
+	            G;
+	        //参数判断
+	        if(!names) {
+	            names = element;
+	            element = document;
+	        }
+	        //兼容判断(优先使用原生方法)
+	        if(element.getElementsByClassName){
+	            G= element.getElementsByClassName(names);
+	            for(var i= 0; i<G.length; i++){
+	                result[i]= G[i];
+	            }
+	        }
+	        else{
+	            //以若干空格分割为数组
+	            names= names.split(/\s+/);
+	            var aNode, 
+	                thisClassName, 
+	                allNode= element.getElementsByTagName('*'), //取到所有元素节点
+	                L= allNode.length;
+	            //遍历所有类名
+	            for(var i= 0; i<names.length; i++){
+	                names[i]= RegExp('\\b'+names[i]+'\\b');//转换为正则
+	            }
+	            // 遍历所有元素节点
+	            classnameLoop:
+	            while(L){
+	                aNode= allNode[--L];//更新所需判断的节点
+	                thisClassName= aNode.className;
+	                if(thisClassName){
+	            //过滤掉不需要的节点
+	                    for(var i= 0; i<names.length; i++){
+	                        if(names[i].test(thisClassName)== false) {
+	                            continue classnameLoop;
+	                        }
+	                    }
+	            // 添加到结果中
+	                    result.push(aNode);
+	                }
+	            }
+	        }
+	        return result;
+	    }
+	    // 测试
+	    var example = document.getElementById('example');
+	    var a = getElementsByClassName('aaa');
+	    var bc = getElementsByClassName(example,'bbb ccc');
+	    var cb = getElementsByClassName('ccc bbb');
+	    console.log(a)
+	    console.log(bc)
+	    console.log(cb)
+	    cb[0].innerHTML = 'changed';
+	</script>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	    <meta charset="UTF-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	    <title>Document</title>
+	</head>
+	<body>
+	    <div id="div" style="width:100px;height:100px;background-color:red;"></div>
+	    <button type="button" id="btn">改变透明度</button>
+		<script>
+		    function fadeout(element) {
+		        clearInterval(timer);
+		        var alpha = 100,    //重置透明度
+		            speed = -3;     //透明度100/(总时间1000/帧速30)=速度
+		        var timer = setInterval(function() {
+		            alpha += speed;
+		            if(alpha <= 0) {
+		                clearInterval(timer);
+		            }else{
+		                element.style.opacity = alpha/100;
+		                element.style.filter = 'alpha(opacity:'+alpha+')';//兼容IE
+		            }
+		        },30)
+		    }
+		</script>
+		<!-- 测试内容 -->
+		<script>
+		    var oDiv = document.getElementById('div');
+		    var oBtn = document.getElementById('btn');
+		 
+		    oBtn.onclick = function() {
+		        fadeout(oDiv);
+		    }
+		</script>
+	</body>
+</html>
