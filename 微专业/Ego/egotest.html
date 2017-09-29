@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="reset.css"/>
+    <link rel="stylesheet" type="text/css" href="egotest.css"/>
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+</head>
+<body>
+    <nav>
+    	<div class="ego">
+    		<i class="sprite logo"></i>
+    		<span>/&nbsp; 漫 画 学 园 &nbsp;/</span>
+    	</div>
+    	<div class="m-tabs" id="hdtabs">
+			<ul class="f-cb">
+				<li class="z-active"><a href="/index">首页</a></li>
+				<li><a href="/works">作品</a></li>
+				<li><a href="">圈子</a></li>
+				<li><a href="">奇思妙想</a></li>
+				<div class="tabs_track">
+				<div class="tabs_thumb" style="width: 68px;left: 0px;"></div>
+				<!--这个div模拟的是那个滑块，width和left可以分别用js的
+					element.offsetWidth和element.offsetLeft获取-->
+			</ul>
+		</div>
+		</div>
+		<div class="h-right">
+			<form action="/search" id="search" method="get">
+				<div class="u-search">
+					<input type="text" name="keyword" id="keyword" placeholder="输入搜索内容" />
+					<button class="u-icon u-icon-search u-icon-btn" type="submit"></button>
+				</div>	
+			</form>
+			<div class="login" id="guest">
+				<button class="u-btn u-btn-primary u-btn-icon" id="login">
+					<i class="u-icon u-icon-user"></i>&nbsp;登录
+				</button>
+				<button class="u-btn u-btn-link" id="register">
+					注册
+				</button>
+			</div>
+			<!--登录成功后的样式-->
+			<div class="m-user" id="userdropdown">
+				<div class="user_info">
+					<span class="user_avatar"><img src="/res/images/avatar.png" alt=""/></span>
+					<span>
+						<span class="user_name" id="name"></span>
+						<span class="u-icon"></span>
+					</span>
+					<span class="u-icon u-icon-down"></span>
+				</div>
+				<ul class="user_list">
+					<li>个人中心</li>
+					<li>信息</li>
+					<li>设置</li>
+					<li id="logout">退出帐号</li>
+				</ul>
+			</div>
+		</div>
+    </nav>
+    <div class="login-form">
+    	<div class="login-header">  
+			<a href="javascript:;" title="关闭" class="login-close close"><i class="u-icon u-icon-close"></i></a>  
+		</div> 
+		<div class="login-body">
+			<span>欢迎回来</span>
+			<div class="register-now">
+				<span>还没有账号？</span><a id="register">立即注册</a>
+			</div>
+			<form action="main.html" method="get">  
+				<div class="input">  
+					<label>用户名</label>  
+					<input type="text" class="uname" id="uname" name="uname" autocomplete="off" spellcheck="false" placeholder="请使用注册邮箱或手机号登录">  
+				</div>  
+				<div class="input">  
+					<label>密码</label>  
+					<input type="password" class="upwd" id="upwd" name="upwd" autocomplete="off" spellcheck="false" placeholder="请输入密码">  
+				</div>  
+				<div class="form-group">  
+					<div class="checkbox">  
+						<label>
+							<input type="checkbox"  name="checkname" id="checkid" onchange="changeval()" value="0">下次自动登录
+						</label>  
+						<div class="pull-right">  
+							<a href="" class="text-right">忘记密码？</a>  
+						</div>  
+					</div>  
+				</div>  
+				<div class="form-group">  
+					<button type="submit" class="btn btn-info btn-lg btn-block">登    录</button>  
+				</div>  
+				<div class="form-group">  
+					<a href="javascript:;" class="register-btn btn btn-info btn-lg btn-block" role="button">注册新账号</a>  
+				</div>  
+			</form>  
+		</div>
+	</div>
+    <div class="login-form-mask"></div>
+    <div class="banner">
+    	<img src="res/banner0.jpg"/>
+    </div>
+    
+    
+    <script type="text/javascript">
+    	jQuery(document).ready(function($) {  
+			$('#login').click(function() {  
+				$('.login-form-mask').fadeIn(100);  
+				$('.login-form').slideDown(200);  
+			})  
+			$('.login-close').click(function() {  
+				$('.login-form-mask').fadeOut(100);  
+				$('.login-form').slideUp(200);  
+			})  
+		})  
+    </script>
+</body>
+ 
+</html>
